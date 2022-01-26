@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:photos_app/repositories/photos/photos_repository.dart';
 import 'package:photos_app/models/models.dart';
+import 'package:photos_app/widgets/widgets.dart';
 
 class PhotosScreen extends StatefulWidget {
   @override
@@ -48,8 +49,11 @@ class _PhotosScreenState extends State<PhotosScreen> {
                       ),
                       itemBuilder: (context, index) {
                         final photo = photos[index];
-                        return Container(
-                          color: Colors.green,
+                        // print(photo);
+                        return PhotoCard(
+                          photo: photo,
+                          index: index,
+                          photos: photos,
                         );
                       },
                       itemCount: photos.length,
